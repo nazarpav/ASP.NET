@@ -1,0 +1,23 @@
+﻿@model _23_07_2020.Models.PostModel[]
+
+@{
+    ViewBag.Title = "Programming";
+}
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" style="width: 50%;">
+                    <img class="card-img-top" src="~/@item.ImgPath" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text">@item.Description</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
