@@ -235,6 +235,7 @@ C:\Projects\ASP.NET\HomeWork\24_07_2020\23_07_2020\obj\Debug\23_07_2020.csproj.C
 C:\Projects\ASP.NET\HomeWork\24_07_2020\23_07_2020\obj\Debug\23_07_2020.csproj.CopyComplete
 C:\Projects\ASP.NET\HomeWork\24_07_2020\23_07_2020\obj\Debug\23_07_2020.dll
 C:\Projects\ASP.NET\HomeWork\24_07_2020\23_07_2020\obj\Debug\23_07_2020.pdb
+C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\23_07_2020.dll.config
 C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\23_07_2020.dll
 C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\23_07_2020.pdb
@@ -249,7 +250,6 @@ C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\roslyn\Microsoft.CodeAnal
 C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
 C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\roslyn\Microsoft.CSharp.Core.targets
 C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
@@ -313,7 +313,6 @@ C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\System.Web.WebPages.Razor
 C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\Newtonsoft.Json.xml
 C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\Antlr3.Runtime.pdb
 C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\obj\Debug\23_07_2020.csprojAssemblyReference.cache
 C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\obj\Debug\23_07_2020.csproj.CoreCompileInputs.cache
 C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\obj\Debug\23_07_2020.csproj.CopyComplete
 C:\Projects\ASP.NET\HomeWork\25_07_2020\23_07_2020\obj\Debug\23_07_2020.dll

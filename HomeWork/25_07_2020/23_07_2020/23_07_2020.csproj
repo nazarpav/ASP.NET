@@ -133,10 +133,12 @@
     <Compile Include="Controllers\MAINController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="DataBase\GalleryDBInitializer.cs" />
+    <Compile Include="DataBase\Image.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Images.cs" />
+    <Compile Include="DataBase\DBGalleryContext.cs" />
     <Compile Include="Models\PostModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

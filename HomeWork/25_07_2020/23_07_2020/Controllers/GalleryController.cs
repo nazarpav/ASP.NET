@@ -10,8 +10,8 @@ namespace _23_07_2020.Controllers
     {
         public ActionResult Main()
         {
-            Images im = new Images();
-            return View(im.Images_.ToArray());
+            DBGalleryContext im = new DBGalleryContext();
+            return View(im.Images.ToArray());
         }
     }
 }
