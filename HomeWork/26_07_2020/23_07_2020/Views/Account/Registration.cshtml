@@ -1,0 +1,84 @@
+﻿@model _23_07_2020.Models.UserVM
+@{
+    ViewBag.Title = "Registration";
+}
+<div>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/Account/style.css">
+    <div class="container">
+        <form action="@Url.Action("Registration","Account")" method="post">
+            <div class="row">
+                <div class="col-lg">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            @Html.LabelFor(m => m.Name, new { @class = "input-group-text InputStyle" })
+                        </div>
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control InputFieldStyle", placeholder = "Name" })
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            @Html.LabelFor(m => m.Surname, new { @class = "input-group-text InputStyle" })
+                        </div>
+                        @Html.TextBoxFor(m => m.Surname, new { @class = "form-control InputFieldStyle", placeholder = "Surname" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            @Html.LabelFor(m => m.Login, new { @class = "btn btn-outline-secondary InputStyle" })
+                        </div>
+                        @Html.TextBoxFor(m => m.Login, new { @class = "form-control InputFieldStyle", placeholder = "Login" })
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            @Html.LabelFor(m => m.Email, new { @class = "input-group-text InputStyle" })
+                        </div>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control InputFieldStyle", placeholder = "Email" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            @Html.LabelFor(m => m.PhoneNumber, new { @class = "input-group-text InputStyle" })
+                        </div>
+                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control InputFieldStyle", placeholder = "Phone" })
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            @Html.LabelFor(m => m.Password, new { @class = "input-group-text InputStyle" })
+                        </div>
+                        @Html.TextBoxFor(m => m.Password, new { @class = "form-control InputFieldStyle", placeholder = "Password" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Next" />
+            </div>
+            <div class="row">
+                @Html.ValidationMessageFor(m => m.Name)
+            </div>  <div class="row">
+                @Html.ValidationMessageFor(m => m.Surname)
+            </div>  <div class="row">
+                @Html.ValidationMessageFor(m => m.Login)
+            </div>  <div class="row">
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>  <div class="row">
+                @Html.ValidationMessageFor(m => m.PhoneNumber)
+            </div>  <div class="row">
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+        </form>
+    </div>
+</div>
+<script src="~/Scripts/Account/logic.js"></script>
+

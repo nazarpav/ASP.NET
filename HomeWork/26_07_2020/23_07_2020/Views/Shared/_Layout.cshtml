@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        ━╤デ╦︻(▀̿̿Ĺ̯̿̿▀̿ ̿)
+    </title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">ASP.NET Site</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    @Html.ActionLink("MAIN", "Index", "MAIN", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item active" style="background-color:red; ">
+                    @Html.ActionLink("GetAllUsers", "GetAllUsers", "Account",null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item active" style="background-color:red; ">
+                    @Html.ActionLink("Registration", "Registration", "Account", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item active">
+                    @Html.ActionLink("Profile", "Profile", "UserProfile", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item active" >
+                    @Html.ActionLink("Programmers", "Programming", "Post", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item active">
+                    @Html.ActionLink("ProgrammersReversed", "ProgrammingReversed", "Post", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item active">
+                    @Html.ActionLink("Gallery", "Main", "Gallery", null, new { @class = "nav-link" })
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - ASP.NET Site</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
