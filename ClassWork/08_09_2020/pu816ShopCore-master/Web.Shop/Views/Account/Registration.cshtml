@@ -1,0 +1,132 @@
+﻿@model Web.Shop.Models.RegistrationViewModel
+@{ ViewData["Title"] = "Registration"; }
+
+@section Styles {
+    <link href="~/lib/cropperjs/cropper.min.css" rel="stylesheet" />
+}
+
+<a asp-action="Register" asp-controller="Account">Створити новий акаунт</a>
+<hr />
+<div class="row">
+    <div class="col-md">
+        <form asp-action="Registration">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PhoneNumber" class="control-label"></label>
+                            <input asp-for="PhoneNumber" class="form-control" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password" class="control-label"></label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Registration" class="btn btn-success" />
+                        </div>
+                    </div>
+                    @*<div class="col-md">
+                            <div class="form-group">
+
+                            </div>
+                        </div>*@
+                </div>
+                <img src="~/img/no-image.png" alt="User Image" id="selectedUserImage" data-toggle="modal" data-target="#staticBackdrop" style="max-height:300px;"/>
+        </form>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">CropperJS Modal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="userphoto">
+                        <div class="gravatar-wrapper-128">
+                            <h1 class="control-label">Select photo</h1>
+
+                            <img src="~/img/no-image.png" alt="User Image" id="image" class="logo" style="max-height: 200px;" />
+
+
+                            <img src="~/img/no-image.png" alt="User Image" id="userImageCrop" style="max-height: 200px;" />
+
+                            @*<img id="image" src="body-img.jpg" alt="" class="logo" width="120" height="120">*@
+                            <a href="#" class="btn btn-danger" id="croppedImage">Обізакти фото</a>
+                            <a href="#" class="btn btn-danger" id="rotateImage">Повернути</a>
+                        </div>
+                        <div class="change-picture-slide" style="top: 30px;">
+                            <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
+                            <a href="" onclick="changePicture(); return false">Change Picture</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="Understood" data-dismiss="modal">Understood</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/lib/cropperjs/cropper.min.js"></script>
+    <script>
+        var userImage = document.getElementById("image");
+        var cropper = cropper = new Cropper(userImage, {
+            aspectRatio: 1 / 1
+        });
+        $("#Understood").click(function () {
+            selectedUserImage.src = userImageCrop.src;
+        });
+        function changePicture() {
+            $('#upload').click();
+        }
+        function readURL(input) {
+            console.log(input.files);
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    cropper.destroy();
+                    userImage.src = e.target.result;
+                    cropper = new Cropper(userImage, {
+                        aspectRatio: 1 / 1
+                    });
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $(function () {
+
+            $("#croppedImage").on("click", function (e) {
+                e.preventDefault();
+                console.log(e);
+                var contentImage = cropper.getCroppedCanvas().toDataURL();
+                console.log(contentImage);
+                console.log(cropper);
+                $("#userImageCrop").attr("src", contentImage);
+                //console.log('--Image data--', contentImage);
+
+            });
+            $("#rotateImage").on("click", function (e) {
+                e.preventDefault();
+                cropper.rotate(45);
+            });
+        });
+    </script>
+}
+
