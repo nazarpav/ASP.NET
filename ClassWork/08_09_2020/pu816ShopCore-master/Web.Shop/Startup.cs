@@ -89,24 +89,17 @@ namespace Web.Shop
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseStaticFiles();
-
-            // using Microsoft.Extensions.FileProviders;
-            // using System.IO;
             app.UseStaticFiles(new StaticFileOptions
             {
                 FileProvider = new PhysicalFileProvider(
                     Path.Combine(env.ContentRootPath, "Uploads")),
                 RequestPath = "/Files"
             });
-
             app.UseSession();
-
             app.UseRouting();
-
             app.UseCookiePolicy();
             app.UseAuthentication();
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
