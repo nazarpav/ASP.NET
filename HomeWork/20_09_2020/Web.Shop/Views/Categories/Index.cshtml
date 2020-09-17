@@ -1,0 +1,39 @@
+﻿@using Web.Shop.Entities
+@model List<Category>
+@{
+    ViewData["Title"] = "Список користувачів";
+}
+<h1>Список категорій</h1>
+
+<div class="row">
+
+    <a class="btn btn-success" asp-action="Create">Додати категорію</a>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Image</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cat in Model)
+                {
+                    <tr>
+                        <th scope="row">@cat.Id</th>
+                        <td>@cat.Name</td>
+                        <td>
+                        <img src = "/Files/@cat.Image" width="100"></td>
+                        <td>
+                            <a asp-controller="Categories" asp-action="Edit" asp-route-id="@cat.Id">Редагувати</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
